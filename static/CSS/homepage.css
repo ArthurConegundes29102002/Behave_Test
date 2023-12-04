@@ -1,0 +1,27 @@
+body{
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    height: 100vh;
+    background-color: rgb(229, 220, 205);
+}
+
+input{
+    margin-top: 10px;
+    padding: 10px;
+    justify-content: center;
+}
+
+table {
+    border: 1px solid #000;
+    width: 25vw;
+    text-align: center;
+    background-color: white;
+    height: 5vh;
+    overflow-y: auto;
+}
+
+#page_title{
+    text-align: center;
+    margin-bottom: 100px;
+}

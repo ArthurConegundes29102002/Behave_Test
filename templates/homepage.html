@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/homepage.css') }}">
+
+</head>
+<body >
+
+    <div class="centraldiv">
+        <h1 id="page_title">homepage</h1>
+        <h1 style="text-align: center;" id="table_title">Task Table</h1>
+
+        <table>
+
+            <tr id="titles_row">
+                <th>Task Name</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task.content }}</td>
+                <td>{{ task.date_created.date() }}</td>
+                <td>
+                    <a href="/delete/{{task.id}}" id="delete_button">Delete</a>
+                    <br>
+                    <a href="" id="update_button">Update</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <form action="/" method="POST">
+            <input type="text" name="content" id="content_box">
+            <input type="submit" value="Add Task" id='add_task_button'>
+        </form>
+    </div>
+</body>
+</html>
